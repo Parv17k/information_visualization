@@ -5,22 +5,36 @@
     <body>
         <h1>Hello D3.js</h1>
         <div></div>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/6.3.1/d3.min.js">
+        
+        
+        
+        <ul>
+            <li> first element</li>
+            </ul>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/6.3.1/d3.min.js">
         </script>
         <script>
             let h1=d3.select("h1");
             let div=d3.select("div");
-             // content get and Set using .text()
+            let ul = d3.select("ul");
+           
+            // content get and Set using .text()
            //get using .text()
-           alert( h1.text())
+           
+            alert( h1.text())
             //set using .text(value)
             alert("Changing h1");
             h1.text("Changed the values");
 
             // setting html using .html method on selector
             div.html("I am inside div <span>Parv Khatri is here</span>");
-
-
+            
+            ul.append("li").text("2nd element");
+            alert("Deleting  Div");
+            div.remove();
+            d3.select("body").append("div").append("h1").html("I am back")
 
 
             </script>
