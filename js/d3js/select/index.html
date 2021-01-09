@@ -34,10 +34,14 @@
         
             div.remove();
             d3.select("body").append("div").append("h1").html("I am back")
-            d3.csv("http://mysafeinfo.com/api/data?list=dowjonescompanies&format=csv")
+
+            //reading data using d3.csv and d3.json.s
+
+            d3.json("http://mysafeinfo.com/api/data?list=dowjonescompanies&format=json")
             .then((data)=>{
+        
                 data.forEach(element => {
-                    ul.append("li").text(element["Stock Name"])
+                    ul.append("li").text(element["StockName"])
                 });
                 
             })
