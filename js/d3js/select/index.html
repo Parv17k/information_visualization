@@ -4,20 +4,20 @@
     </head>
     <body>
         <h1>Hello D3.js</h1>
-
+        <div></div>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/6.3.1/d3.min.js">
         </script>
         <script>
             let h1=d3.select("h1");
-            
-            console.log(h1.node());
-            // content get and Set using .method()
-           //get using .method()
+            let div=d3.select("div");
+             // content get and Set using .text()
+           //get using .text()
            alert( h1.text())
-            //set using .method(value)
+            //set using .text(value)
             alert("Changing h1");
             h1.text("Changed the values");
-
+            div.html("<p>Parv Khatri is here</p>");
+            
 
 
 
