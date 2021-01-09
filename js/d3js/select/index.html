@@ -9,7 +9,7 @@
         
         
         <ul>
-            <li> first element</li>
+
             </ul>
 
 
@@ -25,17 +25,27 @@
            
             alert( h1.text())
             //set using .text(value)
-            alert("Changing h1");
             h1.text("Changed the values");
 
             // setting html using .html method on selector
             div.html("I am inside div <span>Parv Khatri is here</span>");
             
             ul.append("li").text("2nd element");
-            alert("Deleting  Div");
+        
             div.remove();
             d3.select("body").append("div").append("h1").html("I am back")
-
+            d3.csv("http://mysafeinfo.com/api/data?list=dowjonescompanies&format=csv")
+            .then((data)=>{
+                data.forEach(element => {
+                    ul.append("li").text(element["Stock Name"])
+                });
+                
+            })
+            .catch(e=>{
+                alert("error");
+                console.error(e);
+            }
+            )
 
             </script>
     </body>
