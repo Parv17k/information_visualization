@@ -1,10 +1,40 @@
-<svg height="100%" width="100%">
-    <circle cx="50" cy="50" r="40" stroke="black" stroke-width="3" fill="red" />
-  </svg>
 
+  <body>
+<button onclick="add()">push</button>
+<button onclick="pop()">pop</button>
+
+ 
+
+
+
+<div id="list">hello</div>
+      </body>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/6.3.1/d3.min.js"></script>
 
  <script>
+svg=d3.select("#list");
 
- 
- 
+let data=[];
+
+function add(){
+    data.push(Math.random()*100);
+    refresh(data)
+    return false
+}
+function pop(){
+    data.pop()
+    refresh(data)
+    return false
+}
+ function refresh(data)
+  {
+     
+      svg.selectAll("div").data(data)
+      .enter()
+      .append("div").text(d=>{return d})
+      console.log(svg.selectAll("div").data(data).exit())
+      svg.selectAll("div").data(data).exit().remove("div")
+
+  }
+
  </script>
