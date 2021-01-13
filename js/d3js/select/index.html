@@ -8,7 +8,7 @@
         
         
         
-        <ul>
+        <ul id="list">
 
             </ul>
 
@@ -18,7 +18,7 @@
         <script>
             let h1=d3.select("h1");
             let div=d3.select("div");
-            let ul = d3.select("ul");
+            let ul = d3.select("#list");
            
             // content get and Set using .text()
            //get using .text()
@@ -39,10 +39,11 @@
 
             d3.json("http://mysafeinfo.com/api/data?list=dowjonescompanies&format=json")
             .then((data)=>{
-        
-                data.forEach(element => {
-                    ul.append("li").text(element["StockName"])
-                });
+                ul.selectAll("li").data(data)
+                .enter()
+                .append("li")
+                .text(d=>{console.log(d.CompanyName)
+                    return d.CompanyName})
                 
             })
             .catch(e=>{
