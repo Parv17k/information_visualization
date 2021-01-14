@@ -12,7 +12,7 @@
      <script>
     svg=d3.select("#list");
 
-    let data=[{gre:312,gpa:3.3},{gre:296,gpa:3.0},{gre:320,gpa:3.6,},{gre:310,gpa:3.2},{gre:290,gpa:2.0},{gre:322,gpa:3.8}];
+    let data=[{gre:312,gpa:3.3},{gre:296,gpa:3.0},{gre:298,gpa:3.1},{gre:320,gpa:3.6,},{gre:310,gpa:3.2},{gre:290,gpa:2.0},{gre:322,gpa:3.8}];
     let yScale=d3.scaleLinear().domain([280,340]).range([280,340])
     let xScale=d3.scaleLinear().domain([2,4]).range([0,4])
     let lineGen=d3.line().x(d=>{return xScale(d.gpa)}).y(d=>{ return yScale(d.gre)});
